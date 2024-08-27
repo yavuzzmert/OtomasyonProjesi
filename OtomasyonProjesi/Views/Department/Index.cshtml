@@ -6,3 +6,22 @@
 
 <h2>Departman Listeleme Sayfası</h2>
 
+<table class="table table-bordered" style="margin:30px">
+    <tr>
+        <th>Departman No</th>
+        <th>Departman Adı</th>     
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var d in Model)
+            {
+                <tr>
+                    <td>@d.DepartmentID</td>
+                    <td>@d.DepartmentName</td>
+                    <td><a href="/Department/DepartmentDelete/@d.DepartmentID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Department/GetByDepartmentID/@d.DepartmentID" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+</table>
+<a href="/Department/DepartmentAdd" class="btn btn-primary ml-2">Yeni Departman Ekle</a>
+

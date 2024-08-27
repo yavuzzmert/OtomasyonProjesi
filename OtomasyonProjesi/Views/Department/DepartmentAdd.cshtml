@@ -1,0 +1,25 @@
+﻿
+@model OtomasyonProjesi.Models.Entities.Department
+
+@{
+    ViewBag.Title = "DepartmentAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Department Ekleme Sayfası</h2>
+
+<br />
+
+<form class="form-group" method="post">
+    <div>
+        @Html.LabelFor(x => x.DepartmentName)
+        @Html.TextAreaFor(x => x.DepartmentName, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.DepartmentState)
+        @Html.TextAreaFor(x => x.DepartmentState, new { @class = "form-control" })
+    </div>   
+    <br />
+    <button class="btn btn-outline-info">Kaydet</button>
+
+</form>

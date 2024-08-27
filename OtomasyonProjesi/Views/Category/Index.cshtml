@@ -4,5 +4,25 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>category index sayfasını açtın</h2>
+
+<h2>category Listeleme sayfasını açtın</h2>
+
+<table class="table table-bordered" style="margin:20px">
+    <tr>
+        <th>Kategori No</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var k in Model)
+            {
+                <tr>
+                    <td>@k.CategoryID</td>
+                    <td>@k.CategoryName</td>
+                    <td><a href="/Category/CategoryDelete/@k.CategoryID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Category/GetByCategoryID/@k.CategoryID" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+</table>
+<a href="/Category/CategoryAdd" class="btn btn-primary ml-2">Yeni Kategori Ekle</a>
 

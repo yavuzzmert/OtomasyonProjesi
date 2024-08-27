@@ -1,0 +1,24 @@
+﻿
+@model OtomasyonProjesi.Models.Entities.Category
+
+@{
+    ViewBag.Title = "GetByCategoryID";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Category Güncelleme Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("CategoryUpdate","Category", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(x => x.CategoryName)
+                    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                    @Html.HiddenFor(x=> x.CategoryID)
+                </div>
+                <br />
+                <button class="btn btn-outline-warning">
+                    Güncelle
+                </button>
+            }
